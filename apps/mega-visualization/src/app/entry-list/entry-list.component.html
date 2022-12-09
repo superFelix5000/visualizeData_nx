@@ -1,0 +1,87 @@
+<div class="py-10">
+    <div class="flex flex-row justify-between">
+        <div class="flex flex-row justify-start">
+            <mat-form-field appearance="fill">
+                <mat-label>Search</mat-label>
+                <input matInput type="text" [(ngModel)]="searchFieldValue" (ngModelChange)="onInputChange($event)">
+                <button *ngIf="searchFieldValue" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="flex flex-row items-center px-5 pb-5" *ngIf="searchFieldValue.length !== 0">
+                <p class="font-semibold">total value:   {{filteredEntriesSearchValue$ | async | number}}</p>
+            </div>
+        </div>
+        <mat-paginator
+            [length]="(filteredEntries$ | async).length"
+            [pageSize]="size"
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            (page)="updatePageData($event)"
+            showFirstLastButtons
+            >
+        </mat-paginator>
+    </div>
+    
+    <table
+        class="table"
+        matSort
+        (matSortChange)="onSortChange($event)"
+        mat-table
+        [dataSource]="
+            filteredEntries$ | async | bankDataSort: sort:sortDirection | slice: start:end
+        "
+    >
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <td mat-cell *matCellDef="let entry">
+                {{ entry.paymentDate | printSimpleDate }}
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="recipient">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Recipient</th>
+            <td mat-cell *matCellDef="let entry">{{ entry.recipientOrPayer }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+            <td mat-cell *matCellDef="let entry">{{ entry.amount }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="event">
+            <th mat-header-cell *matHeaderCellDef>Event</th>
+            <td mat-cell *matCellDef="let entry">{{ entry.event }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="message">
+            <th mat-header-cell *matHeaderCellDef>Message</th>
+            <td mat-cell *matCellDef="let entry">{{ entry.message }}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let entry">
+                <mat-select
+                    [value]="entry.category"
+                    (selectionChange)="onCategorySelectionChange(entry, $event)"
+                >
+                    <mat-option
+                        *ngFor="let category of categoryType | keyvalue"
+                        [value]="category.value"
+                        >{{ category.value }}</mat-option
+                    >
+                </mat-select>
+            </td>
+        </ng-container>
+    </table>
+    <div class="p-10 pl-0" *ngIf="entries.length > 0">
+        <button class="bg-blue-400 disabled:bg-gray-500 active:bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+            (click)="onUploadClicked()"
+            [disabled]="!entryChanged">
+            Upload
+        </button>
+    </div>    
+</div>

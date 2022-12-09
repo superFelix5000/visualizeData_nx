@@ -1,0 +1,23 @@
+.yearBalances {
+    display: flex;
+    flex-flow: row;
+    padding: 0 0 20px 10px;
+    div {
+        margin: 0 20px 0 0;
+        background-color: lavender;
+        padding: 0 10px 0 10px;
+    }
+}
+
+.yearBalance {
+    display: flex;
+    flex-direction: row;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
