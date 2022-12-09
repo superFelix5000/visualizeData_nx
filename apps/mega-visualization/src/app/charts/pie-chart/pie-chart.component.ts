@@ -42,10 +42,13 @@ export class PieChartComponent implements OnInit {
                     mode: 'index',
                 },
             },
-        }
+        };
 
-        this.myChart = new Chart(this.myCanvas.nativeElement.getContext('2d'), config);
-        
+        this.myChart = new Chart(
+            this.myCanvas.nativeElement.getContext('2d'),
+            config
+        );
+
         this.bankDataQuery.selectAllCategoriesPerSelectedYearAndMonth$
             .pipe(
                 filter((values) => values.length > 0),

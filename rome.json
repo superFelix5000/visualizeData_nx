@@ -1,0 +1,23 @@
+{
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    },
+    "ignore": ["*.js"]
+  },
+  "formatter":{
+    "enabled": true,
+    "indentSize": 4,
+    "indentStyle": "space",
+    "ignore": ["*.js"],
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter":{
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "trailingComma": "es5"
+    }
+  }
+}

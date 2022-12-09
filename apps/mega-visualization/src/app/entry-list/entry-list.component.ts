@@ -5,8 +5,12 @@ import {
     OnChanges,
     Output,
 } from '@angular/core';
-import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
-import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
+import {
+    LegacyPageEvent as PageEvent,
+} from '@angular/material/legacy-paginator';
+import {
+    MatLegacySelectChange as MatSelectChange,
+} from '@angular/material/legacy-select';
 import { Sort } from '@angular/material/sort';
 import { map, Observable } from 'rxjs';
 import { SearchPipe } from '../pipes/search.pipe';

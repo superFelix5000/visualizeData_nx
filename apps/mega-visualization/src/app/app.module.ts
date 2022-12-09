@@ -4,11 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
+import {
+    MatLegacySelectModule as MatSelectModule,
+} from '@angular/material/legacy-select';
+import {
+    MatLegacyButtonModule as MatButtonModule,
+} from '@angular/material/legacy-button';
+import {
+    MatLegacyTabsModule as MatTabsModule,
+} from '@angular/material/legacy-tabs';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import {
+    MatLegacyInputModule as MatInputModule,
+} from '@angular/material/legacy-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
@@ -16,8 +24,12 @@ import { VisualizationComponent } from './visualization-page/visualization/visua
 import { AppRoutingModule } from './routing/routing.module';
 import { LandingPageComponent } from './landing-page/landing-page/landing-page.component';
 import { EntryListPageComponent } from './entry-list-page/entry-list-page.component';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import {
+    MatLegacyPaginatorModule as MatPaginatorModule,
+} from '@angular/material/legacy-paginator';
+import {
+    MatLegacyTableModule as MatTableModule,
+} from '@angular/material/legacy-table';
 import { MatSortModule } from '@angular/material/sort';
 import { BankDataSortPipe } from './pipes/bank.data.sort.pipe';
 import { UploadComponent } from './upload-page/upload-component/upload.component';
