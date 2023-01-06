@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-    LegacyPageEvent as PageEvent,
-} from '@angular/material/legacy-paginator';
-import {
-    MatLegacySelectChange as MatSelectChange,
-} from '@angular/material/legacy-select';
+import { PageEvent } from '@angular/material/paginator';
+import { MatSelectChange } from '@angular/material/select';
 import { filter, take } from 'rxjs/operators';
 import { Category } from '../shared/categories';
 import { DataEntrySortDirection } from '../shared/data-entry-sort-direction';

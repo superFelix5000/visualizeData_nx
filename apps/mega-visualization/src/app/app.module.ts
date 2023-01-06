@@ -4,32 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import {
-    MatLegacySelectModule as MatSelectModule,
-} from '@angular/material/legacy-select';
-import {
-    MatLegacyButtonModule as MatButtonModule,
-} from '@angular/material/legacy-button';
-import {
-    MatLegacyTabsModule as MatTabsModule,
-} from '@angular/material/legacy-tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
-import {
-    MatLegacyInputModule as MatInputModule,
-} from '@angular/material/legacy-input';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
-import { VisualizationComponent } from './visualization-page/visualization/visualization.component';
 import { AppRoutingModule } from './routing/routing.module';
 import { LandingPageComponent } from './landing-page/landing-page/landing-page.component';
 import { EntryListPageComponent } from './entry-list-page/entry-list-page.component';
-import {
-    MatLegacyPaginatorModule as MatPaginatorModule,
-} from '@angular/material/legacy-paginator';
-import {
-    MatLegacyTableModule as MatTableModule,
-} from '@angular/material/legacy-table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { BankDataSortPipe } from './pipes/bank.data.sort.pipe';
 import { UploadComponent } from './upload-page/upload-component/upload.component';
@@ -41,6 +28,10 @@ import { RecipientCategorySortPipe } from './pipes/recipient.category.sort.pipe'
 import { StackedComponent } from './charts/stacked/stacked.component';
 import { YearBarchartComponent } from './charts/year-barchart/year-barchart.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { AccountSelectorComponent } from './account-selector/account-selector.component';
+import { YearsChartComponent } from './charts/years-chart/years-chart.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { VisualizationComponent } from './visualization-page/visualization/visualization.component';
 
 @NgModule({
     declarations: [
@@ -58,6 +49,9 @@ import { SearchPipe } from './pipes/search.pipe';
         RecipientCategorySortPipe,
         StackedComponent,
         YearBarchartComponent,
+        AccountSelectorComponent,
+        YearsChartComponent,
+        BreadcrumbsComponent,
     ],
     imports: [
         BrowserModule,

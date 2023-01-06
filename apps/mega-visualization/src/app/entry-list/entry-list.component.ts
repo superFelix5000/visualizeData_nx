@@ -5,17 +5,13 @@ import {
     OnChanges,
     Output,
 } from '@angular/core';
-import {
-    LegacyPageEvent as PageEvent,
-} from '@angular/material/legacy-paginator';
-import {
-    MatLegacySelectChange as MatSelectChange,
-} from '@angular/material/legacy-select';
+import { PageEvent } from '@angular/material/paginator';
+import { MatSelectChange } from '@angular/material/select';
 import { Sort } from '@angular/material/sort';
 import { map, Observable } from 'rxjs';
-import { SearchPipe } from '../pipes/search.pipe';
 import { BankDataEntry } from '../shared/bank-data-entry';
 import { Category } from '../shared/categories';
+import { SearchPipe } from '../pipes/search.pipe';
 import { DataEntrySort } from '../shared/data-entry-sort';
 import { DataEntrySortDirection } from '../shared/data-entry-sort-direction';
 import { BankDataQuery } from '../state/bank.data.query';

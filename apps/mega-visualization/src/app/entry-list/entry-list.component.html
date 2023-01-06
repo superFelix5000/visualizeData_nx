@@ -1,9 +1,8 @@
 <div class="py-10">
     <div class="flex flex-row justify-between">
         <div class="flex flex-row justify-start">
-            <mat-form-field appearance="fill">
-                <mat-label>Search</mat-label>
-                <input matInput type="text" [(ngModel)]="searchFieldValue" (ngModelChange)="onInputChange($event)">
+            <mat-form-field appearance="fill">                
+                <input matInput type="text" placeholder="Search" [(ngModel)]="searchFieldValue" (ngModelChange)="onInputChange($event)">
                 <button *ngIf="searchFieldValue" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
                     <mat-icon>close</mat-icon>
                 </button>

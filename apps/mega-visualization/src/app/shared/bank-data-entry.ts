@@ -4,6 +4,7 @@ import { Category } from './categories';
 
 export type BankDataEntry = {
     id: string;
+    bankaccountid: number;
     postingDate: SimpleDate;
     valueDate: SimpleDate;
     paymentDate: SimpleDate;
@@ -22,6 +23,7 @@ export type BankDataEntry = {
 
 export function createBankDataEntry(
     postingDate: SimpleDate,
+    bankAccountId: number,
     valueDate: SimpleDate,
     paymentDate: SimpleDate,
     amount: number,
@@ -37,6 +39,7 @@ export function createBankDataEntry(
 ): BankDataEntry {
     return {
         id: guid(),
+        bankaccountid: bankAccountId,
         postingDate: postingDate,
         valueDate: valueDate,
         paymentDate: paymentDate,

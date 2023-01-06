@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
-import { filter } from 'rxjs';
 import { BankDataQuery } from '../../state/bank.data.query';
+import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { BankDataService } from '../../state/bank.data.service';
+import { MONTHS } from '../../shared/constants';
 
 @Component({
     selector: 'app-year-barchart',
@@ -13,27 +13,12 @@ export class YearBarchartComponent implements OnInit {
     @ViewChild('canvas', { static: true })
     myCanvas: ElementRef<HTMLCanvasElement>;
 
-    private labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-    ];
-
     private myChart: Chart;
 
     private config: ChartConfiguration = {
         type: 'bar',
         data: {
-            labels: this.labels,
+            labels: MONTHS,
             datasets: [],
         },
         options: {
@@ -42,6 +27,7 @@ export class YearBarchartComponent implements OnInit {
                     display: false,
                 },
             },
+            responsive: true,
         },
     };
 
@@ -58,22 +44,14 @@ export class YearBarchartComponent implements OnInit {
             this.config
         );
 
-        this.bankDataQuery.selectCurrentMonthValues$
-            .pipe(
-                filter(
-                    (values) =>
-                        values.length > 0 &&
-                        values.find((value) => value > 0) > 0
-                )
-            )
-            .subscribe((values) => {
-                this.myChart.data.datasets = [];
-                this.myChart.data.datasets.push({
-                    backgroundColor: 'blue',
-                    data: values,
-                });
-                this.myChart.update();
+        this.bankDataQuery.selectCurrentMonthValues$.subscribe((values) => {
+            this.myChart.data.datasets = [];
+            this.myChart.data.datasets.push({
+                backgroundColor: '#3c6591',
+                data: values,
             });
+            this.myChart.update();
+        });
     }
 
     onChartClick(e) {

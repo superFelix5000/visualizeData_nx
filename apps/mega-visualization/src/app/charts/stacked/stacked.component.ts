@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { filter } from 'rxjs';
-import { BankDataQuery } from '../../state/bank.data.query';
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { Category } from '../../shared/categories';
 import { CategoryColorMap } from '../../shared/category-colors';
+import { BankDataQuery } from '../../state/bank.data.query';
+import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { MONTHS } from '../../shared/constants';
 
 @Component({
     selector: 'app-stacked',
@@ -20,23 +20,8 @@ export class StackedComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        const labels = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December',
-        ];
-
         const data = {
-            labels: labels,
+            labels: MONTHS,
             datasets: [],
         };
 
@@ -61,9 +46,8 @@ export class StackedComponent implements OnInit {
             config
         );
 
-        this.bankDataQuery.selectAllEntriesPerSelectedYear$
-            .pipe(filter((entries) => entries.length > 0))
-            .subscribe((entries) => {
+        this.bankDataQuery.selectAllEntriesPerSelectedYear$.subscribe(
+            (entries) => {
                 this.myChart.data.datasets = [];
                 for (const key in Category) {
                     const monthValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -83,7 +67,8 @@ export class StackedComponent implements OnInit {
                     });
                 }
                 this.myChart.update();
-            });
+            }
+        );
     }
 
     onChartClick(e) {

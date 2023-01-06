@@ -16,8 +16,11 @@ export class UploadComponent {
         const target = event.target as HTMLInputElement;
         const file: File = target.files[0];
         file.text().then((text) => {
-            this.entries =
-                this.bankDataService.readBankDataEntriesFromData(text);
+            this.bankDataService
+                .readBankDataEntriesFromData(text)
+                .subscribe((entries) => {
+                    this.entries = entries;
+                });
         });
     }
 

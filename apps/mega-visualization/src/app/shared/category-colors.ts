@@ -20,6 +20,7 @@ export const CategoryColorMap: Map<Category, string> = new Map([
     [Category.PAYCHECK, '#fabed4'],
     [Category.PUBLICTRANSPORTATION, '#ffd8b1'],
     [Category.WELLBEING, '#fffac8'],
-    // #aaffc3
-    // #dcbeff
+    [Category.ELECTRICITY, '#aaffc3'],
+    [Category.LOAN, '#dcbeff'],
+    [Category.MAINTENANCECHARGE, '#FFFF00'],
 ]);

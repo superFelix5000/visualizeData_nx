@@ -18,4 +18,7 @@ export enum Category {
     CASH = 'CASH',
     BAARI = 'BAARI',
     CHARITY = 'CHARITY',
+    ELECTRICITY = 'ELECTRICITY',
+    LOAN = 'LOAN',
+    MAINTENANCECHARGE = 'MAINTENANCE_CHARGE',
 }

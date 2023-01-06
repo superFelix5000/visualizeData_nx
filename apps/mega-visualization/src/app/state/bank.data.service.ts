@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgxCsvParser } from 'ngx-csv-parser';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { BankDataEntry, createBankDataEntry } from '../shared/bank-data-entry';
 import { Category } from '../shared/categories';
 import { RecipientCategory } from '../shared/recipient-category';
@@ -10,6 +10,7 @@ import {
     CategoryMapFetchServerData,
 } from '../shared/server-data';
 import { SimpleDate } from '../shared/simple-date';
+import { BankDataQuery } from './bank.data.query';
 import { BankDataStore } from './bank.data.store';
 
 @Injectable({ providedIn: 'root' })
@@ -18,12 +19,17 @@ export class BankDataService {
 
     constructor(
         private bankDataStore: BankDataStore,
+        private bankDataQuery: BankDataQuery,
         private http: HttpClient,
         private ngxCsvParser: NgxCsvParser
     ) {}
 
     init(): void {
         this.reloadData();
+    }
+
+    setSelectedBankAccount(bankAccount: number): void {
+        this.bankDataStore.update(() => ({ selectedBankAccount: bankAccount }));
     }
 
     setSearchQuery(searchQuery: string): void {
@@ -103,31 +109,36 @@ export class BankDataService {
         6 Viitenumero;
         7 Valuutta
     */
-    readBankDataEntriesFromData(data: string): BankDataEntry[] {
+    readBankDataEntriesFromData(data: string): Observable<BankDataEntry[]> {
         const bankDataEntries: BankDataEntry[] = [];
         const entries: any[][] = this.ngxCsvParser.csvStringToArray(data, ';');
-        entries
-            .filter((entry) => entry.length > 3)
-            .forEach((entry) => {
-                bankDataEntries.push(
-                    createBankDataEntry(
-                        this.convertStringToDate(entry[0]), //postingdate
-                        this.convertStringToDate(entry[0]), // valuedate
-                        this.convertStringToDate(entry[0]), // paymentdate
-                        parseFloat(entry[1].replace(',', '.')), // amount
-                        (entry[5] as string).toLowerCase(), // recipientorpayer
-                        entry[2], //accountnumber
-                        0, // entry[6], // bic
-                        '', //entry[7], // event
-                        '', //entry[8], // reference
-                        '', //entry[9], // payerreference
-                        '', //entry[10], // message
-                        0, //entry[11], // cardnumber
-                        '' //entry[12] // receipt
-                    )
-                );
-            });
-        return bankDataEntries;
+        return this.bankDataQuery.selectCurrentBankAccount$.pipe(
+            map((bankAccountId) => {
+                entries
+                    .filter((entry) => entry.length > 3)
+                    .forEach((entry) => {
+                        bankDataEntries.push(
+                            createBankDataEntry(
+                                this.convertStringToDate(entry[0]), //postingdate
+                                bankAccountId,
+                                this.convertStringToDate(entry[0]), // valuedate
+                                this.convertStringToDate(entry[0]), // paymentdate
+                                parseFloat(entry[1].replace(',', '.')), // amount
+                                (entry[5] as string).toLowerCase(), // recipientorpayer
+                                entry[2], //accountnumber
+                                0, // entry[6], // bic
+                                '', //entry[7], // event
+                                '', //entry[8], // reference
+                                '', //entry[9], // payerreference
+                                '', //entry[10], // message
+                                0, //entry[11], // cardnumber
+                                '' //entry[12] // receipt
+                            )
+                        );
+                    });
+                return bankDataEntries;
+            })
+        );
     }
 
     updateEntry(id: string, entry: Partial<BankDataEntry>): void {

@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { filter, map, tap } from 'rxjs/operators';
-import { Chart, ChartConfiguration, ChartItem, registerables } from 'chart.js';
-import { CategoryColorMap } from '@mega-visualization/src/app/shared/category-colors';
-import { CategoryPercentage } from '@mega-visualization/src/app/shared/category-percentage';
+import { map } from 'rxjs/operators';
+import { Chart, registerables } from 'chart.js';
+import { CategoryPercentage } from '../../shared/category-percentage';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { BankDataService } from '../../state/bank.data.service';
+import { CategoryColorMap } from '../../shared/category-colors';
 
 @Component({
     selector: 'app-pie-chart',
@@ -26,7 +26,7 @@ export class PieChartComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        const config: ChartConfiguration = {
+        this.myChart = new Chart(this.myCanvas.nativeElement.getContext('2d'), {
             type: 'doughnut',
             data: {
                 datasets: [
@@ -41,17 +41,12 @@ export class PieChartComponent implements OnInit {
                 interaction: {
                     mode: 'index',
                 },
+                responsive: true,
             },
-        };
-
-        this.myChart = new Chart(
-            this.myCanvas.nativeElement.getContext('2d'),
-            config
-        );
+        });
 
         this.bankDataQuery.selectAllCategoriesPerSelectedYearAndMonth$
             .pipe(
-                filter((values) => values.length > 0),
                 map((values) =>
                     values.sort((a, b) =>
                         a.category
