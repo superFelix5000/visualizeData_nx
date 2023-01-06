@@ -1,0 +1,9 @@
+<div class="flex w-screen justify-center">
+    <div class="flex flex-row font-sans text-xl font-bold text-blue-400 h-10 items-center border-2 border-blue-400 rounded p-1">
+        <p>{{currentYear$ | async}}</p>
+        <p *ngIf="(currentMonth$ | async) != null">&#160; > {{currentMonth$ | async}}</p>
+        <p *ngIf="(currentCategory$ | async) != null">&#160; > {{currentCategory$ | async}} </p>
+    </div>
+</div>
+
+

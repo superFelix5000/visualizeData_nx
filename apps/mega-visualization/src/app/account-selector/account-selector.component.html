@@ -1,0 +1,14 @@
+<div class="flex flex-row" class="h-full">
+    <mat-form-field appearance="fill">
+        <mat-label>Select Account</mat-label>
+        <mat-select
+        [value]="selectedBankAccount$ | async"
+        (selectionChange)="onSelectionChange($event)"
+        class="flex-1"
+        >
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
