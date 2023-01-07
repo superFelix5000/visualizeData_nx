@@ -1,9 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Category } from '../../shared/categories';
-import { CategoryColorMap } from '../../shared/category-colors';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
-import { MONTHS } from '../../shared/constants';
+import { Category, CategoryColorMap, MONTHS } from '@finanzor/types';
 
 @Component({
     selector: 'app-stacked',

@@ -2,13 +2,8 @@ import { QueryEntity } from '@datorama/akita';
 import { combineLatest, Observable } from 'rxjs';
 import { BankDataState, BankDataStore } from './bank.data.store';
 import { Injectable } from '@angular/core';
-import { BankDataEntry } from '../shared/bank-data-entry';
-import { defaultIfEmpty, filter, map } from 'rxjs/operators';
-import { YEARS } from '../shared/constants';
-import { CategoryPercentage } from '../shared/category-percentage';
-import { Category } from '../shared/categories';
-import { RecipientCategory } from '../shared/recipient-category';
-import { YearTotals } from '../shared/year-totals';
+import { map } from 'rxjs/operators';
+import { BankDataEntry, Category, CategoryPercentage, RecipientCategory, YEARS, YearTotals } from '@finanzor/types';
 
 @Injectable({
     providedIn: 'root',

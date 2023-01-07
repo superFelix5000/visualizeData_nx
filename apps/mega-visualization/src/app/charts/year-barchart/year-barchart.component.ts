@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { BankDataService } from '../../state/bank.data.service';
-import { MONTHS } from '../../shared/constants';
+import { MONTHS } from '@finanzor/types';
 
 @Component({
     selector: 'app-year-barchart',

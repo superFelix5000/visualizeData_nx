@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RecipientCategory } from '../shared/recipient-category';
+import { RecipientCategory } from '@finanzor/types';
 
 @Pipe({ name: 'recipientCategorySort' })
 export class RecipientCategorySortPipe implements PipeTransform {

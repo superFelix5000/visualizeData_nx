@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BankDataEntry, YEARS, YearTotals } from '@finanzor/types';
 import { Observable, of } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
-import { BankDataEntry } from '../../shared/bank-data-entry';
-import { YEARS } from '../../shared/constants';
-import { YearTotals } from '../../shared/year-totals';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { BankDataService } from '../../state/bank.data.service';
 

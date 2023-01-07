@@ -1,4 +1,4 @@
-import { BankDataEntry } from '../shared/bank-data-entry';
+import { BankDataEntry } from './bank-data-entry';
 import { RecipientCategory } from './recipient-category';
 
 export type BankDataFetchServerData = {

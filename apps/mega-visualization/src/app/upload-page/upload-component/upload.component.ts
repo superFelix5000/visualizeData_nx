@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BankDataEntry } from '../../shared/bank-data-entry';
+import { BankDataEntry } from '@finanzor/types';
 import { BankDataService } from '../../state/bank.data.service';
 
 @Component({

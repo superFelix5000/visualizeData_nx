@@ -1,10 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Chart, registerables } from 'chart.js';
-import { CategoryPercentage } from '../../shared/category-percentage';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { BankDataService } from '../../state/bank.data.service';
-import { CategoryColorMap } from '../../shared/category-colors';
+import { CategoryColorMap, CategoryPercentage } from '@finanzor/types';
 
 @Component({
     selector: 'app-pie-chart',

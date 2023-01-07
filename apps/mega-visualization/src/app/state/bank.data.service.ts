@@ -1,15 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BankDataEntry, BankDataFetchServerData, Category, CategoryMapFetchServerData, createBankDataEntry, RecipientCategory, SimpleDate } from '@finanzor/types';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { map, Observable } from 'rxjs';
-import { BankDataEntry, createBankDataEntry } from '../shared/bank-data-entry';
-import { Category } from '../shared/categories';
-import { RecipientCategory } from '../shared/recipient-category';
-import {
-    BankDataFetchServerData,
-    CategoryMapFetchServerData,
-} from '../shared/server-data';
-import { SimpleDate } from '../shared/simple-date';
 import { BankDataQuery } from './bank.data.query';
 import { BankDataStore } from './bank.data.store';
 

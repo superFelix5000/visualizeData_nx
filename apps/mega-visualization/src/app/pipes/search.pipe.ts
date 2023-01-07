@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { BankDataEntry } from '@finanzor/types';
 import { map, Observable } from 'rxjs';
-import { BankDataEntry } from '../shared/bank-data-entry';
 import { BankDataQuery } from '../state/bank.data.query';
 
 @Pipe({ name: 'search' })

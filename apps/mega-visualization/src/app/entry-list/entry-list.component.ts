@@ -8,12 +8,9 @@ import {
 import { PageEvent } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
 import { Sort } from '@angular/material/sort';
+import { BankDataEntry, Category, DataEntrySort, DataEntrySortDirection } from '@finanzor/types';
 import { map, Observable } from 'rxjs';
-import { BankDataEntry } from '../shared/bank-data-entry';
-import { Category } from '../shared/categories';
 import { SearchPipe } from '../pipes/search.pipe';
-import { DataEntrySort } from '../shared/data-entry-sort';
-import { DataEntrySortDirection } from '../shared/data-entry-sort-direction';
 import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 

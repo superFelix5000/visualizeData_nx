@@ -1,9 +1,6 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
-import { BankDataEntry } from '../shared/bank-data-entry';
 import { Injectable } from '@angular/core';
-import { YEARS } from '../shared/constants';
-import { RecipientCategory } from '../shared/recipient-category';
-import { Category } from '../shared/categories';
+import { BankDataEntry, Category, RecipientCategory, YEARS } from '@finanzor/types';
 
 export interface BankDataState extends EntityState<BankDataEntry, string> {
     selectedYear: number;

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SimpleDate } from '../shared/simple-date';
+import { SimpleDate } from '@finanzor/types';
 
 @Pipe({ name: 'printSimpleDate' })
 export class PrintSimpleDatePipe implements PipeTransform {

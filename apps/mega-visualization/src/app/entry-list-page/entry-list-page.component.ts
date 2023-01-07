@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BankDataEntry } from '@finanzor/types';
 import { Observable } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
-import { BankDataEntry } from '../shared/bank-data-entry';
 import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 

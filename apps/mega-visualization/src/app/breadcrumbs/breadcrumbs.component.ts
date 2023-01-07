@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category, MONTHS } from '@finanzor/types';
 import { map, Observable, of } from 'rxjs';
-import { Category } from '../shared/categories';
-import { MONTHS } from '../shared/constants';
 import { BankDataQuery } from '../state/bank.data.query';
 
 @Component({

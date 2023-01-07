@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
-import { YEARS } from '../../shared/constants';
 import { BankDataQuery } from '../..//state/bank.data.query';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BankDataService } from '../..//state/bank.data.service';
+import { YEARS } from '@finanzor/types';
 
 @Component({
   selector: 'app-years-chart',

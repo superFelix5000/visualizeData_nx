@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
+import { Category, CategoryMapSendServerResponse, DataEntrySortDirection, RecipientCategory } from '@finanzor/types';
 import { filter, take } from 'rxjs/operators';
-import { Category } from '../shared/categories';
-import { DataEntrySortDirection } from '../shared/data-entry-sort-direction';
-import { RecipientCategory } from '../shared/recipient-category';
-import { CategoryMapSendServerResponse } from '../shared/server-data';
 import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 
