@@ -19,10 +19,10 @@ specifiers:
   '@angular/platform-browser-dynamic': 15.0.4
   '@angular/router': 15.0.4
   '@babel/core': 7.20.12
-  '@capacitor/android': ^3.6.0
-  '@capacitor/cli': ^3.6.0
-  '@capacitor/core': ^3.6.0
-  '@capacitor/ios': ^3.6.0
+  '@capacitor/android': 4.6.1
+  '@capacitor/cli': 4.6.1
+  '@capacitor/core': 4.6.1
+  '@capacitor/ios': 4.6.1
   '@datorama/akita': ^7.1.1
   '@datorama/akita-ngdevtools': ^7.0.0
   '@ionic/angular': ^6.1.4
@@ -76,7 +76,7 @@ dependencies:
   '@angular/platform-browser-dynamic': 15.0.4_hnn6v3m7xpfwy5wugozvutqsyi
   '@angular/router': 15.0.4_3a2u7xxmt22ynjuprkcysdnbqa
   '@babel/core': 7.20.12
-  '@capacitor/core': 3.9.0
+  '@capacitor/core': 4.6.1
   '@datorama/akita': 7.1.1_rxjs@7.6.0
   '@ionic/angular': 6.4.1_27pimzhtx4wzvkm3q47koey2iq
   '@nrwl/angular': 15.4.5_2p7s5rthrmskl5s7d4khwr4kjm
@@ -99,9 +99,9 @@ devDependencies:
   '@angular/cli': 15.0.3
   '@angular/compiler-cli': 15.0.4_ewn2ril7hiljdjavj4fhvjxokq
   '@angular/language-service': 15.0.4
-  '@capacitor/android': 3.9.0_@capacitor+core@3.9.0
-  '@capacitor/cli': 3.9.0
-  '@capacitor/ios': 3.9.0_@capacitor+core@3.9.0
+  '@capacitor/android': 4.6.1_@capacitor+core@4.6.1
+  '@capacitor/cli': 4.6.1
+  '@capacitor/ios': 4.6.1_@capacitor+core@4.6.1
   '@datorama/akita-ngdevtools': 7.0.0_7apgsszjzq5dxzmcsa2ylk4cny
   '@nrwl/cli': 15.4.5
   '@nrwl/cypress': 15.4.5_wcvayya3ghalbyxzzqywftl73q
@@ -1998,16 +1998,16 @@ packages:
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  /@capacitor/android/3.9.0_@capacitor+core@3.9.0:
-    resolution: {integrity: sha512-YTPyrh1NozEuYXWGtfqN27TLXUrLbZX9fggyd4JQ1yMaUZTmLPm5dCuznONhQ49aPkJnUJB02JfpHy/qGwa2Lw==}
+  /@capacitor/android/4.6.1_@capacitor+core@4.6.1:
+    resolution: {integrity: sha512-Hnh1tmUr1SP67U6D6ry5I5BEBSN/1nkBAIjQIqf5tF82WNxKbpbC6GfkHE4hMJZinRTrCf36LkrdP8srh7SxoA==}
     peerDependencies:
-      '@capacitor/core': ^3.9.0
+      '@capacitor/core': ^4.6.0
     dependencies:
-      '@capacitor/core': 3.9.0
+      '@capacitor/core': 4.6.1
     dev: true
 
-  /@capacitor/cli/3.9.0:
-    resolution: {integrity: sha512-NkbVZhYb0oPdh/XArE2ZmOwPFJbla5meShGhv3DxKCXeKn1rt92ile+2xOgtB/j+mL7f9cqQzTQM/11sGQzMAg==}
+  /@capacitor/cli/4.6.1:
+    resolution: {integrity: sha512-iFMK83B67RXEQyWi1kOzQmRdCFc/pPD924mjAXG7yFLVyMvVRGAwwf8LzWFzHyQDoKK+auPMHycVfzm9T6Iyyg==}
     engines: {node: '>=12.4.0'}
     hasBin: true
     dependencies:
@@ -2015,14 +2015,15 @@ packages:
       '@ionic/utils-fs': 3.1.6
       '@ionic/utils-subprocess': 2.1.11
       '@ionic/utils-terminal': 2.3.3
-      commander: 6.2.1
+      commander: 9.5.0
       debug: 4.3.4
       env-paths: 2.2.1
       kleur: 4.1.5
       native-run: 1.7.1
-      open: 7.4.2
+      open: 8.4.0
       plist: 3.0.6
       prompts: 2.4.2
+      rimraf: 3.0.2
       semver: 7.3.8
       tar: 6.1.13
       tslib: 2.4.1
@@ -2031,17 +2032,17 @@ packages:
       - supports-color
     dev: true
 
-  /@capacitor/core/3.9.0:
-    resolution: {integrity: sha512-j1lL0+/7stY8YhIq1Lm6xixvUqIn89vtyH5ZpJNNmcZ0kwz6K9eLkcG6fvq1UWMDgSVZg9JrRGSFhb4LLoYOsw==}
+  /@capacitor/core/4.6.1:
+    resolution: {integrity: sha512-7A2IV9E8umgu9u0fChUTjQJq+Jp25GJZMmWxoQN/nVx/1rcpFJ4m1xo3NPBoIRs+aV7FR+BM17mPrnkKlA8N2g==}
     dependencies:
       tslib: 2.4.1
 
-  /@capacitor/ios/3.9.0_@capacitor+core@3.9.0:
-    resolution: {integrity: sha512-GezPCJIujRHnF4wbrKJx6Q/mgFz0f9rmh/steTTXQZI+nEl6mHk6NWh8235p7YbhonYi5WD0rFNirrjGg1EaGw==}
+  /@capacitor/ios/4.6.1_@capacitor+core@4.6.1:
+    resolution: {integrity: sha512-kH1nPG2jCk7w6ASf2VX+tIxHoc2Z/c5+7d89yvtiKmEZXoPLuVyAv/Yx4PhJP2r7KSyl5S2gZZkzQrMdAjDVKg==}
     peerDependencies:
-      '@capacitor/core': ^3.9.0
+      '@capacitor/core': ^4.6.0
     dependencies:
-      '@capacitor/core': 3.9.0
+      '@capacitor/core': 4.6.1
     dev: true
 
   /@colors/colors/1.5.0:
@@ -5745,14 +5746,14 @@ packages:
     resolution: {integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==}
     engines: {node: '>= 6'}
 
-  /commander/6.2.1:
-    resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
-    engines: {node: '>= 6'}
-    dev: true
-
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+
+  /commander/9.5.0:
+    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: true
 
   /common-tags/1.8.2:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
@@ -10146,14 +10147,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       mimic-fn: 2.1.0
-
-  /open/7.4.2:
-    resolution: {integrity: sha512-MVHddDVweXZF3awtlAS+6pgKLlm/JgxZ90+/NBurBoQctVOOB/zDdVjcyPzQ+0laDGbsWgrRkflI65sQeOgT9Q==}
-    engines: {node: '>=8'}
-    dependencies:
-      is-docker: 2.2.1
-      is-wsl: 2.2.0
-    dev: true
 
   /open/8.4.0:
     resolution: {integrity: sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q==}
