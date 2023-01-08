@@ -1,6 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BankDataEntry, BankDataFetchServerData, Category, CategoryMapFetchServerData, createBankDataEntry, RecipientCategory, SimpleDate } from '@finanzor/types';
+import {
+    BankDataEntry,
+    BankDataFetchServerData,
+    Category,
+    CategoryMapFetchServerData,
+    createBankDataEntry,
+    RecipientCategory,
+    SimpleDate,
+} from '@finanzor/types';
 import { NgxCsvParser } from 'ngx-csv-parser';
 import { map, Observable } from 'rxjs';
 import { BankDataQuery } from './bank.data.query';

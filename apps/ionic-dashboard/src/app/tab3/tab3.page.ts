@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page {
-  constructor() {}
+    constructor() {}
 }

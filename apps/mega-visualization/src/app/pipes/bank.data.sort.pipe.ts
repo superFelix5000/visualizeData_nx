@@ -1,5 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { BankDataEntry, DataEntrySort, DataEntrySortDirection } from '@finanzor/types';
+import {
+    BankDataEntry,
+    DataEntrySort,
+    DataEntrySortDirection,
+} from '@finanzor/types';
 
 @Pipe({ name: 'bankDataSort' })
 export class BankDataSortPipe implements PipeTransform {

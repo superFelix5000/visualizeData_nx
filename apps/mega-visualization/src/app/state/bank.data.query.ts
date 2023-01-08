@@ -3,7 +3,14 @@ import { combineLatest, Observable } from 'rxjs';
 import { BankDataState, BankDataStore } from './bank.data.store';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { BankDataEntry, Category, CategoryPercentage, RecipientCategory, YEARS, YearTotals } from '@finanzor/types';
+import {
+    BankDataEntry,
+    Category,
+    CategoryPercentage,
+    RecipientCategory,
+    YEARS,
+    YearTotals,
+} from '@finanzor/types';
 
 @Injectable({
     providedIn: 'root',
