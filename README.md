@@ -1,6 +1,6 @@
 # monorepo exploration project
 
-This started with moving my [bank data visualization project](https://github.com/superFelix5000/visualizeData) over to an NX monorepo. My plan now is to move all my side projects here if possible and let them share as much code as possible.
+This started with moving my [bank data visualization project](https://github.com/superFelix5000/visualizeData) over to an NX monorepo. My plan now is to move most of my side projects here if possible and let them share as much code as possible.
 
 ## What's in it
 - Angular frontend for bank data visualization
