@@ -29,6 +29,7 @@ specifiers:
   '@nrwl/angular': 15.4.5
   '@nrwl/cli': 15.4.5
   '@nrwl/cypress': 15.4.5
+  '@nrwl/deno': ^0.157.0
   '@nrwl/eslint-plugin-nx': 15.4.5
   '@nrwl/jest': 15.4.5
   '@nrwl/linter': 15.4.5
@@ -105,6 +106,7 @@ devDependencies:
   '@datorama/akita-ngdevtools': 7.0.0_7apgsszjzq5dxzmcsa2ylk4cny
   '@nrwl/cli': 15.4.5
   '@nrwl/cypress': 15.4.5_wcvayya3ghalbyxzzqywftl73q
+  '@nrwl/deno': 0.157.0_nx@15.4.5+typescript@4.8.4
   '@nrwl/eslint-plugin-nx': 15.4.5_zfhymemg7mnj3v476ow2uo4ad4
   '@nrwl/jest': 15.4.5_fbsr5qnuc5mksjion35tn3gqku
   '@nrwl/linter': 15.4.5_wdvje6cscbyxt2whaszz5wau3q
@@ -3693,6 +3695,17 @@ packages:
       - prettier
       - typescript
 
+  /@nrwl/deno/0.157.0_nx@15.4.5+typescript@4.8.4:
+    resolution: {integrity: sha512-LW7thChQ08W6N/h/NDT7RPzXvVM2WuP+2qdzgsdlRKRJK5HQdYS/B/geic/AbzY52O+Ajj/mBFqb6LfxXJrStw==}
+    dependencies:
+      '@nrwl/devkit': 15.7.0_nx@15.4.5+typescript@4.8.4
+      '@swc/core': 1.3.37
+      fs-extra: 11.1.0
+    transitivePeerDependencies:
+      - nx
+      - typescript
+    dev: true
+
   /@nrwl/devkit/15.4.1_nx@15.4.5+typescript@4.8.4:
     resolution: {integrity: sha512-6AWWXyUpoqWkVARgUeARSmFanvgqlb81GN8SBwUQhezTbalOPmi0TsUN6n7MHAc611MAFE9eZBd+29UM+sFXeg==}
     peerDependencies:
@@ -3736,6 +3749,21 @@ packages:
       tslib: 2.4.1
     transitivePeerDependencies:
       - typescript
+
+  /@nrwl/devkit/15.7.0_nx@15.4.5+typescript@4.8.4:
+    resolution: {integrity: sha512-aPh3xnSpP4HH8sU2ICuuhtBgp2k4ydfkW/uTOlK/BvT94++AJ/Aj8ZSJFWAd2IteFsMNynPz5c0jLO+MSTqRnA==}
+    peerDependencies:
+      nx: '>= 14.1 <= 16'
+    dependencies:
+      '@phenomnomnominal/tsquery': 4.1.1_typescript@4.8.4
+      ejs: 3.1.8
+      ignore: 5.2.1
+      nx: 15.4.5
+      semver: 7.3.4
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - typescript
+    dev: true
 
   /@nrwl/eslint-plugin-nx/15.4.5_zfhymemg7mnj3v476ow2uo4ad4:
     resolution: {integrity: sha512-tuFWq6G5asopBANQ5X0ugHHkfkET6aanENqmua0XDbyslz0C8b3s/6gp7qa7FZdDWYYrFBek+npaUqDrfgbulA==}
@@ -4116,6 +4144,113 @@ packages:
     engines: {node: '>=12.10.0', npm: '>=6.0.0'}
     hasBin: true
     dev: false
+
+  /@swc/core-darwin-arm64/1.3.37:
+    resolution: {integrity: sha512-iIyVqqioUpVeT/hbBVfkrsjfCyL4idNH+LVKGmoTAWaTTSB0+UNhNuA7Wh2CqIHWh1Mv7IlumitWPcqsVDdoEw==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-darwin-x64/1.3.37:
+    resolution: {integrity: sha512-dao5nXPWKxtaxqak4ZkRyBoApNIelW/glantQhPhj0FjMjuIQc+v03ldJ8XDByWOG+6xuVUTheANCtEccxoQBw==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm-gnueabihf/1.3.37:
+    resolution: {integrity: sha512-/mVrc8H/f062CUkqKGmBiil2VIYu4mKawHxERfeP1y38X5K/OwjG5s9MgO9TVxy+Ly6vejwj70kRhSa3hVp1Bw==}
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm64-gnu/1.3.37:
+    resolution: {integrity: sha512-eRQ3KaZI0j5LidTfOIi/kUVOOMuVmw1HCdt/Z1TAUKoHMLVxY8xcJ3pEE3/+ednI60EmHpwpJRs6LelXyL6uzQ==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm64-musl/1.3.37:
+    resolution: {integrity: sha512-w2BRLODyxNQY2rfHZMZ5ir6QrrnGBPlnIslTrgKmVbn1OjZoxUCtuqhrYnCmybaAc4DOkeH02TqynEFXrm+EMw==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-x64-gnu/1.3.37:
+    resolution: {integrity: sha512-CfoH8EsZJZ9kunjMUjBNYD5fFuO86zw+K/o4wEw72Yg6ZEiqPmeIlCKU8tpTv4sK+CbhUXrmVzMB5tqsb2jALQ==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-x64-musl/1.3.37:
+    resolution: {integrity: sha512-9YPrHYNdoG7PK11gV51GfL45biI2dic+YTqHUDKyykemsD7Ot1zUFX7Ty//pdvpKcKSff6SrHbfFACD5ziNirA==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-arm64-msvc/1.3.37:
+    resolution: {integrity: sha512-h17Ek8/wCDje6BrXOvCXBM80oBRmTSMMdLyt87whTl5xqYlWYYs9oQIzZndNRTlNpTgjGO8Ns2eo4kwVxIkBIA==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-ia32-msvc/1.3.37:
+    resolution: {integrity: sha512-1BR175E1olGy/zdt94cgdb6ps/lBNissAOaxyBk8taFpcjy3zpdP30yAoH0GIsC6isnZ5JfArbOJNRXXO5tE0Q==}
+    engines: {node: '>=10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-x64-msvc/1.3.37:
+    resolution: {integrity: sha512-1siDQ7dccQ1pesJmgAL3BUBbRPtfbNInOWnZOkiie/DfFqGQ117QKnCVyjUvwFKfTQx1+3UUTDmMSlRd00SlXg==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core/1.3.37:
+    resolution: {integrity: sha512-VOFlEQ1pReOM73N9A7R8rt561GU8Rxsq833jiimWDUB2sXEN3V6n6wFTgYmZuMz2T4/R0cQA1nV48KkaT4gkFw==}
+    engines: {node: '>=10'}
+    requiresBuild: true
+    optionalDependencies:
+      '@swc/core-darwin-arm64': 1.3.37
+      '@swc/core-darwin-x64': 1.3.37
+      '@swc/core-linux-arm-gnueabihf': 1.3.37
+      '@swc/core-linux-arm64-gnu': 1.3.37
+      '@swc/core-linux-arm64-musl': 1.3.37
+      '@swc/core-linux-x64-gnu': 1.3.37
+      '@swc/core-linux-x64-musl': 1.3.37
+      '@swc/core-win32-arm64-msvc': 1.3.37
+      '@swc/core-win32-ia32-msvc': 1.3.37
+      '@swc/core-win32-x64-msvc': 1.3.37
+    dev: true
 
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
@@ -7440,6 +7575,15 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
+
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
 
   /fs-extra/3.0.1:
     resolution: {integrity: sha512-V3Z3WZWVUYd8hoCL5xfXJCaHWYzmtwW5XWYSlLgERi8PWd8bx1kUHUk8L1BT57e49oKnDDD180mjfrHc1yA9rg==}
