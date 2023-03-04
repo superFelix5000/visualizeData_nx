@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  bankdataserver:
+    image: bankdataserver
+    build: 
+      context: bankdataserver
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./bankdataserver/data:/app/data
+  visualizedata:
+    image: visualizedata
+    build: 
+      context: visualizeData
+    ports:
+      - "4200:80"
