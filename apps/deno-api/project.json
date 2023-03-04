@@ -1,0 +1,39 @@
+{
+  "name": "deno-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/deno-api/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/deno:bundle",
+      "outputs": ["dist/apps/deno-api"],
+      "options": {
+        "main": "apps/deno-api/src/main.ts",
+        "outputFile": "dist/apps/deno-api/main.js",
+        "denoConfig": "apps/deno-api/deno.json"
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/deno:run",
+      "options": {
+        "buildTarget": "deno-api:build",
+        "watch": true
+      }
+    },
+    "test": {
+      "executor": "@nrwl/deno:test",
+      "outputs": ["coverage/apps/deno-api"],
+      "options": {
+        "coverageDirectory": "coverage/apps/deno-api",
+        "denoConfig": "apps/deno-api/deno.json"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/deno:lint",
+      "options": {
+        "denoConfig": "apps/deno-api/deno.json"
+      }
+    }
+  },
+  "tags": []
+}

@@ -50,5 +50,6 @@
       "style": "scss"
     }
   },
-  "defaultProject": "mega-visualization"
+  "defaultProject": "mega-visualization",
+  "plugins": ["@nrwl/deno"]
 }
