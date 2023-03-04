@@ -10,8 +10,9 @@ This started with moving my [bank data visualization project](https://github.com
 
 ## Sandbox
 This is a bit of a Frankenstein's monster for testing out various frameworks and tools (or getting better at them), such as
-- tailwind
-- rome for linting and formatting
+- NX / monorepos
+- tailwind css
+- rome for linting and formatting as an alternative to eslint/prettier
 - capacitor / ionic
 - angular material
 - pnpm as an alternative to npm
@@ -20,6 +21,9 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - rxjs
 - deno
 - ...
+
+## Todo
+- adjust the docker/docker compose support to work within the monorepo usinx NX
 
 ## Usage
 - run `pnpm install`
