@@ -11,29 +11,29 @@ import { BankDataService } from '../state/bank.data.service';
   styleUrls: ['./entry-list-page.component.scss'],
 })
 export class EntryListPageComponent implements OnInit {
-  entries$: Observable<BankDataEntry[]>;
+    entries$: Observable<BankDataEntry[]>;
 
-  constructor(
-    private bankDataQuery: BankDataQuery,
-    private bankDataService: BankDataService
-  ) {}
+    constructor(
+        private bankDataQuery: BankDataQuery,
+        private bankDataService: BankDataService
+    ) {}
 
-  ngOnInit(): void {
-    this.entries$ = this.bankDataQuery.selectAllFromCurrentBankAccount$;
-  }
+    ngOnInit(): void {
+        this.entries$ = this.bankDataQuery.selectAllFromCurrentBankAccount$;
+    }
 
-  onEntryChanged(entry: Partial<BankDataEntry>) {
-    this.bankDataService.updateEntry(entry.id, entry);
-  }
+    onEntryChanged(entry: Partial<BankDataEntry>) {
+        this.bankDataService.updateEntry(entry.id, entry);
+    }
 
-  onUpload() {
-    this.bankDataQuery.selectAllFromCurrentBankAccount$
-      .pipe(
-        take(1),
-        mergeMap((entries) => this.bankDataService.uploadAll(entries))
-      )
-      .subscribe((obj) => {
-        console.log(`data saved? ${JSON.stringify(obj)}`);
-      });
-  }
+    onUpload() {
+        this.bankDataQuery.selectAllFromCurrentBankAccount$
+            .pipe(
+                take(1),
+                mergeMap((entries) => this.bankDataService.uploadAll(entries))
+            )
+            .subscribe((obj) => {
+                console.log(`data saved? ${JSON.stringify(obj)}`);
+            });
+    }
 }

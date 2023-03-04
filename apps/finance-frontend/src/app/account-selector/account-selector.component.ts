@@ -11,18 +11,19 @@ import { BankDataService } from '../state/bank.data.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class AccountSelectorComponent implements OnInit {
-  selectedBankAccount$: Observable<number>;
+    selectedBankAccount$: Observable<number>;
 
-  constructor(
-    private bankDataQuery: BankDataQuery,
-    private bankDataService: BankDataService
-  ) {}
+    constructor(
+        private bankDataQuery: BankDataQuery,
+        private bankDataService: BankDataService
+    ) {}
 
-  ngOnInit(): void {
-    this.selectedBankAccount$ = this.bankDataQuery.selectCurrentBankAccount$;
-  }
+    ngOnInit(): void {
+        this.selectedBankAccount$ =
+            this.bankDataQuery.selectCurrentBankAccount$;
+    }
 
-  onSelectionChange(event: MatSelectChange) {
-    this.bankDataService.setSelectedBankAccount(event.value);
-  }
+    onSelectionChange(event: MatSelectChange) {
+        this.bankDataService.setSelectedBankAccount(event.value);
+    }
 }

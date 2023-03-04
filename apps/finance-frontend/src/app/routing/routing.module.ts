@@ -3,15 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from '../landing-page/landing-page/landing-page.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'visualization',
-  },
-  {
-    path: 'visualization',
-    component: LandingPageComponent,
-  },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'visualization',
+    },
+    {
+        path: 'visualization',
+        component: LandingPageComponent,
+    },
 ];
 
 @NgModule({

@@ -1,18 +1,18 @@
 import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    Output,
 } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
 import { Sort } from '@angular/material/sort';
 import {
-  BankDataEntry,
-  Category,
-  DataEntrySort,
-  DataEntrySortDirection,
+    BankDataEntry,
+    Category,
+    DataEntrySort,
+    DataEntrySortDirection,
 } from '@finanzor/types';
 import { map, Observable } from 'rxjs';
 import { SearchPipe } from '../pipes/search.pipe';
@@ -25,79 +25,79 @@ import { BankDataService } from '../state/bank.data.service';
   styleUrls: ['./entry-list.component.scss'],
 })
 export class EntryListComponent implements OnChanges {
-  @Input() entries: BankDataEntry[] = [];
-  @Output() onEntryChanged = new EventEmitter<Partial<BankDataEntry>>();
-  @Output() onUpload = new EventEmitter();
+    @Input() entries: BankDataEntry[] = [];
+    @Output() onEntryChanged = new EventEmitter<Partial<BankDataEntry>>();
+    @Output() onUpload = new EventEmitter();
 
-  protected filteredEntries$: Observable<BankDataEntry[]>;
-  protected filteredEntriesSearchValue$: Observable<number>;
+    protected filteredEntries$: Observable<BankDataEntry[]>;
+    protected filteredEntriesSearchValue$: Observable<number>;
 
-  protected entryChanged = false;
+    protected entryChanged = false;
 
-  protected columnsToDisplay = [
-    'date',
-    'recipient',
-    'amount',
-    'event',
-    'message',
-    'category',
-  ];
-  protected size = 10;
-  protected start = 0;
-  protected end: number = this.start + this.size;
-  protected sort: DataEntrySort;
-  protected sortDirection: DataEntrySortDirection;
-  protected categoryType = Category;
-  protected searchFieldValue = '';
+    protected columnsToDisplay = [
+        'date',
+        'recipient',
+        'amount',
+        'event',
+        'message',
+        'category',
+    ];
+    protected size = 10;
+    protected start = 0;
+    protected end: number = this.start + this.size;
+    protected sort: DataEntrySort;
+    protected sortDirection: DataEntrySortDirection;
+    protected categoryType = Category;
+    protected searchFieldValue = '';
 
-  constructor(
-    private bankDataService: BankDataService,
-    private bankDataQuery: BankDataQuery,
-    private searchPipe: SearchPipe
-  ) {}
+    constructor(
+        private bankDataService: BankDataService,
+        private bankDataQuery: BankDataQuery,
+        private searchPipe: SearchPipe
+    ) {}
 
-  // todo: this is not the best way to do this
-  ngOnChanges(): void {
-    this.filteredEntries$ = this.searchPipe.transform(this.entries);
-    this.filteredEntriesSearchValue$ = this.filteredEntries$.pipe(
-      map((entries) => entries.reduce((a, b) => a + b.amount, 0))
-    );
-  }
+    // todo: this is not the best way to do this
+    ngOnChanges(): void {
+        this.filteredEntries$ = this.searchPipe.transform(this.entries);
+        this.filteredEntriesSearchValue$ = this.filteredEntries$.pipe(
+            map((entries) => entries.reduce((a, b) => a + b.amount, 0))
+        );
+    }
 
-  updatePageData(event: PageEvent): void {
-    this.size = event.pageSize;
-    this.start = event.pageIndex * event.pageSize;
-    this.end = this.start + event.pageSize;
-  }
+    updatePageData(event: PageEvent): void {
+        this.size = event.pageSize;
+        this.start = event.pageIndex * event.pageSize;
+        this.end = this.start + event.pageSize;
+    }
 
-  onSortChange(event: Sort): void {
-    this.sort = DataEntrySort[event.active as keyof typeof DataEntrySort];
-    this.sortDirection =
-      DataEntrySortDirection[
-        event.direction as keyof typeof DataEntrySortDirection
-      ];
-  }
+    onSortChange(event: Sort): void {
+        this.sort = DataEntrySort[event.active as keyof typeof DataEntrySort];
+        this.sortDirection =
+            DataEntrySortDirection[
+                event.direction as keyof typeof DataEntrySortDirection
+            ];
+    }
 
-  onCategorySelectionChange(
-    entry: BankDataEntry,
-    event: MatSelectChange
-  ): void {
-    this.onEntryChanged.emit({ id: entry.id, category: event.value });
-    // TODO: move flag to store and have global "sync" button
-    this.entryChanged = true;
-  }
+    onCategorySelectionChange(
+        entry: BankDataEntry,
+        event: MatSelectChange
+    ): void {
+        this.onEntryChanged.emit({ id: entry.id, category: event.value });
+        // TODO: move flag to store and have global "sync" button
+        this.entryChanged = true;
+    }
 
-  onUploadClicked(): void {
-    this.onUpload.emit();
-    this.entryChanged = false;
-  }
+    onUploadClicked(): void {
+        this.onUpload.emit();
+        this.entryChanged = false;
+    }
 
-  onInputChange(e: string): void {
-    this.bankDataService.setSearchQuery(e);
-  }
+    onInputChange(e: string): void {
+        this.bankDataService.setSearchQuery(e);
+    }
 
-  onSearchClear(): void {
-    this.searchFieldValue = '';
-    this.bankDataService.setSearchQuery(this.searchFieldValue);
-  }
+    onSearchClear(): void {
+        this.searchFieldValue = '';
+        this.bankDataService.setSearchQuery(this.searchFieldValue);
+    }
 }

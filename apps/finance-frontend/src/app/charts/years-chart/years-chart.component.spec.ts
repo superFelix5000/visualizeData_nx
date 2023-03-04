@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { YearsChartComponent } from './years-chart.component';
 
 describe('YearsChartComponent', () => {
-  let component: YearsChartComponent;
-  let fixture: ComponentFixture<YearsChartComponent>;
+    let component: YearsChartComponent;
+    let fixture: ComponentFixture<YearsChartComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [YearsChartComponent],
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [YearsChartComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(YearsChartComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(YearsChartComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

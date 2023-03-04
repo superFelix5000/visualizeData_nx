@@ -11,57 +11,57 @@ import { BankDataService } from '../../state/bank.data.service';
   styleUrls: ['./visualization.component.scss'],
 })
 export class VisualizationComponent implements OnInit {
-  years = YEARS;
+    years = YEARS;
 
-  // TODO: not used atm
-  selectedYear$: Observable<number>;
+    // TODO: not used atm
+    selectedYear$: Observable<number>;
 
-  yearTotals$: Observable<YearTotals[]> = of([]);
-  filteredBankDataEntries$: Observable<BankDataEntry[]>;
+    yearTotals$: Observable<YearTotals[]> = of([]);
+    filteredBankDataEntries$: Observable<BankDataEntry[]>;
 
-  constructor(
-    private bankDataQuery: BankDataQuery,
-    private bankDataService: BankDataService
-  ) {}
+    constructor(
+        private bankDataQuery: BankDataQuery,
+        private bankDataService: BankDataService
+    ) {}
 
-  ngOnInit(): void {
-    this.bankDataService.init();
+    ngOnInit(): void {
+        this.bankDataService.init();
 
-    this.yearTotals$ = this.bankDataQuery.selectYearTotals$;
-    this.selectedYear$ = this.bankDataQuery.selectCurrentYear$;
-    this.filteredBankDataEntries$ =
-      this.bankDataQuery.selectAllEntriesPerSelectedYearAndMonthAndCategory$;
-  }
+        this.yearTotals$ = this.bankDataQuery.selectYearTotals$;
+        this.selectedYear$ = this.bankDataQuery.selectCurrentYear$;
+        this.filteredBankDataEntries$ =
+            this.bankDataQuery.selectAllEntriesPerSelectedYearAndMonthAndCategory$;
+    }
 
-  onYearSelectionChange(year: number): void {
-    this.bankDataService.setYear(year);
-    this.bankDataService.setMonth(null);
-    this.bankDataService.setCategory(null);
-  }
+    onYearSelectionChange(year: number): void {
+        this.bankDataService.setYear(year);
+        this.bankDataService.setMonth(null);
+        this.bankDataService.setCategory(null);
+    }
 
-  reloadData(): void {
-    this.bankDataService.reloadData();
-  }
+    reloadData(): void {
+        this.bankDataService.reloadData();
+    }
 
-  // TODO: type for ev
-  nodeClicked(ev): void {
-    this.bankDataService.setMonth(ev.nodeindex + 1);
-    this.bankDataService.setCategory(null);
-  }
+    // TODO: type for ev
+    nodeClicked(ev): void {
+        this.bankDataService.setMonth(ev.nodeindex + 1);
+        this.bankDataService.setCategory(null);
+    }
 
-  onEntryChanged(entry: Partial<BankDataEntry>) {
-    this.bankDataService.updateEntry(entry.id, entry);
-  }
+    onEntryChanged(entry: Partial<BankDataEntry>) {
+        this.bankDataService.updateEntry(entry.id, entry);
+    }
 
-  onUpload() {
-    this.bankDataQuery
-      .selectAll()
-      .pipe(
-        take(1),
-        mergeMap((entries) => this.bankDataService.uploadAll(entries))
-      )
-      .subscribe((obj) => {
-        console.log(`data saved? ${JSON.stringify(obj)}`);
-      });
-  }
+    onUpload() {
+        this.bankDataQuery
+            .selectAll()
+            .pipe(
+                take(1),
+                mergeMap((entries) => this.bankDataService.uploadAll(entries))
+            )
+            .subscribe((obj) => {
+                console.log(`data saved? ${JSON.stringify(obj)}`);
+            });
+    }
 }
