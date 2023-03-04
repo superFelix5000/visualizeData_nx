@@ -50,6 +50,6 @@
       "style": "scss"
     }
   },
-  "defaultProject": "mega-visualization",
+  "defaultProject": "finance-frontend",
   "plugins": ["@nrwl/deno"]
 }

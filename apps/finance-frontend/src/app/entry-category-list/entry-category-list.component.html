@@ -1,0 +1,54 @@
+<mat-paginator
+  [length]="entries.length"
+  [pageSize]="size"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  (page)="updatePageData($event)"
+  showFirstLastButtons
+>
+</mat-paginator>
+
+<table
+  class="table"
+  matSort
+  mat-table
+  [dataSource]="entries | recipientCategorySort | slice : start : end"
+>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+  <ng-container matColumnDef="recipient">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Recipient</th>
+    <td mat-cell *matCellDef="let entry">{{ entry.recipient }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef>Category</th>
+    <td mat-cell *matCellDef="let entry">
+      <mat-select
+        [value]="entry.category"
+        (selectionChange)="onCategorySelectionChange(entry, $event)"
+      >
+        <mat-option
+          *ngFor="let category of categoryType | keyvalue"
+          [value]="category.value"
+          >{{ category.value }}</mat-option
+        >
+      </mat-select>
+    </td>
+  </ng-container>
+</table>
+<div class="flex justify-around p-10">
+  <button
+    [disabled]="!entryChanged"
+    class="bg-blue-400 disabled:bg-gray-500 active:bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="onSave()"
+  >
+    Upload
+  </button>
+  <button
+    class="bg-blue-400 disabled:bg-gray-500 active:bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    (click)="onMerge()"
+  >
+    Merge existing entries
+  </button>
+</div>
