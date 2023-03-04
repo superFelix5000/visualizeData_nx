@@ -20,6 +20,7 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - chart.js
 - rxjs
 - deno
+- docker/docker compose
 - ...
 
 ## Todo
