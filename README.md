@@ -29,8 +29,5 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - run `pnpm install`
 - run `nx serve deno-api` for starting the backend
 - run `nx serve finance-frontend` for the frontend
-
-linting
-- run `npm run lint` or `npx rome check .`
-formatting
-- run `npm run format` or `npx rome format --write .` 
+- linting: run `npm run lint` or `npx rome check .`
+- formatting: run `npm run format` or `npx rome format --write .` 
