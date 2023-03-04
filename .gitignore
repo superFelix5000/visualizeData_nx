@@ -8,6 +8,9 @@ tmp
 # dependencies
 node_modules
 
+# deno api
+apps/deno-api/data
+
 # IDEs and editors
 /.idea
 .project
