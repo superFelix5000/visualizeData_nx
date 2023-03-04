@@ -1,8 +1,7 @@
-import { BankDataEntry } from "../types.ts";
-import { RecipientCategory } from "../types.ts";
+import { BankDataEntry, RecipientCategory } from "../src/types.ts";
 
-const fileNameBankDataEntries = "data/entries.json";
-const fileNameCategoryMap = "data/categoryMap.json";
+const fileNameBankDataEntries = "apps/deno-api/data/entries.json";
+const fileNameCategoryMap = "apps/deno-api/data/categoryMap.json";
 
 const fetchCategoryMap = async ({ response }: any) => {
   const text = await Deno.readTextFile(fileNameCategoryMap);

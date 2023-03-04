@@ -1,5 +1,17 @@
-import { serve } from 'https://deno.land/std@0.157.0/http/server.ts';
-import { handler } from './handler.ts';
+import { Application } from "https://deno.land/x/oak/mod.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
+import router from "./routes.ts";
 
-console.log('Listening on http://localhost:8000');
-serve(handler);
+const port = 8000;
+
+const app = new Application();
+
+app.use(oakCors({
+  origin: "http://localhost:4200"
+}));
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+console.log(`Server running on port ${port}`);
+
+await app.listen({ port });
