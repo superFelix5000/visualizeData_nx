@@ -25,6 +25,8 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 
 ## Todo
 - adjust the docker/docker compose support to work within the monorepo usinx NX
+- create script for starting frontend and backend in parallel
+- share the models between frontend and backend through a library 
 
 ## Usage
 - run `pnpm install`
@@ -32,3 +34,9 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - run `nx serve finance-frontend` for the frontend
 - run `npm run lint` or `npx rome check .` for linting
 - run `npm run format` or `npx rome format --write .` for formatting
+
+### Docker
+- run `nx build finance-frontend` for first building the frontend into the dist folder from which it is later copied to the docker container
+- run `docker compose up` for starting backend and frontend
+- run `docker compose up deno-api` for starting only the backend
+- run `docker compose up finance-frontend` for starting only the frontend
