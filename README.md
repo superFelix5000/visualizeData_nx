@@ -24,7 +24,6 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - ...
 
 ## Todo
-- adjust the docker/docker compose support to work within the monorepo usinx NX
 - create script for starting frontend and backend in parallel
 - share the models between frontend and backend through a library 
 
