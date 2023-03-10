@@ -24,8 +24,8 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - ...
 
 ## Todo
-- create script for starting frontend and backend in parallel
-- share the models between frontend and backend through a library 
+- create script for starting frontend and backend in parallel using nx
+- let the deno backend also use the shared library models
 
 ## Usage
 - run `pnpm install`
