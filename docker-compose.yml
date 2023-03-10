@@ -1,16 +1,18 @@
 version: "3.7"
 services:
-  bankdataserver:
-    image: bankdataserver
-    build: 
-      context: bankdataserver
+  deno-api:
+    image: deno-api
+    build:
+      context: apps/deno-api/
+      dockerfile: ./Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - ./bankdataserver/data:/app/data
-  visualizedata:
-    image: visualizedata
+      - ./apps/deno-api/data:/apps/deno-api/data
+  finance-frontend:
+    image: finance-frontend
     build: 
-      context: visualizeData
+      context: .
+      dockerfile: ./apps/finance-frontend/Dockerfile
     ports:
       - "4200:80"
