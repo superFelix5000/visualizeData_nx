@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { guid } from '@datorama/akita';
 import {
     BankDataEntry,
     BankDataFetchServerData,
@@ -120,6 +121,7 @@ export class BankDataService {
                     .forEach((entry) => {
                         bankDataEntries.push(
                             createBankDataEntry(
+                                guid(),
                                 this.convertStringToDate(entry[0]), //postingdate
                                 bankAccountId,
                                 this.convertStringToDate(entry[0]), // valuedate

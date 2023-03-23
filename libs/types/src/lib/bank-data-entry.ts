@@ -1,5 +1,4 @@
 import { SimpleDate } from './simple-date';
-import { guid } from '@datorama/akita';
 import { Category } from './categories';
 
 export type BankDataEntry = {
@@ -22,6 +21,7 @@ export type BankDataEntry = {
 };
 
 export function createBankDataEntry(
+    guid: string,
     postingDate: SimpleDate,
     bankAccountId: number,
     valueDate: SimpleDate,
@@ -38,7 +38,7 @@ export function createBankDataEntry(
     receipt: string
 ): BankDataEntry {
     return {
-        id: guid(),
+        id: guid,
         bankaccountid: bankAccountId,
         postingDate: postingDate,
         valueDate: valueDate,
