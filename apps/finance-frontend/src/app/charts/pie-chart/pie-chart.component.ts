@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Chart, registerables } from 'chart.js';
+import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { BankDataQuery } from '../../state/bank.data.query';
 import { BankDataService } from '../../state/bank.data.service';
 import { CategoryColorMap, CategoryPercentage } from '@finanzor/types';
@@ -25,7 +25,7 @@ export class PieChartComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.myChart = new Chart(this.myCanvas.nativeElement.getContext('2d'), {
+        const config: ChartConfiguration = {
             type: 'doughnut',
             data: {
                 datasets: [
@@ -42,7 +42,12 @@ export class PieChartComponent implements OnInit {
                 },
                 responsive: true,
             },
-        });
+        };
+
+        this.myChart = new Chart(
+            this.myCanvas.nativeElement.getContext('2d'),
+            config
+        );
 
         this.bankDataQuery.selectAllCategoriesPerSelectedYearAndMonth$
             .pipe(
