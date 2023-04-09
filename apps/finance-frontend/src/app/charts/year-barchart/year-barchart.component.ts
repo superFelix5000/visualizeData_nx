@@ -7,7 +7,6 @@ import { MONTHS } from '@finanzor/types';
 @Component({
   selector: 'app-year-barchart',
   templateUrl: './year-barchart.component.html',
-  styleUrls: ['./year-barchart.component.scss'],
 })
 export class YearBarchartComponent implements OnInit {
     @ViewChild('canvas', { static: true })

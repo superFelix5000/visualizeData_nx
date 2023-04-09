@@ -6,7 +6,6 @@ import { Category, CategoryColorMap, MONTHS } from '@finanzor/types';
 @Component({
   selector: 'app-stacked',
   templateUrl: './stacked.component.html',
-  styleUrls: ['./stacked.component.scss'],
 })
 export class StackedComponent implements OnInit {
     @ViewChild('canvas', { static: true })

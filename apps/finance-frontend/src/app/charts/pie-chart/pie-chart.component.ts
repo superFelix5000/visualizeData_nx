@@ -8,7 +8,6 @@ import { CategoryColorMap, CategoryPercentage } from '@finanzor/types';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss'],
 })
 export class PieChartComponent implements OnInit {
     @ViewChild('canvas', { static: true })

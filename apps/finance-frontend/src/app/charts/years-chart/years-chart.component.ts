@@ -8,7 +8,6 @@ import { YEARS } from '@finanzor/types';
 @Component({
   selector: 'app-years-chart',
   templateUrl: './years-chart.component.html',
-  styleUrls: ['./years-chart.component.scss'],
 })
 export class YearsChartComponent implements OnInit {
     @ViewChild('canvas', { static: true })

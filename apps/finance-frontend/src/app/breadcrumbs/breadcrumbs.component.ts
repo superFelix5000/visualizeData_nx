@@ -6,7 +6,6 @@ import { BankDataQuery } from '../state/bank.data.query';
 @Component({
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.scss'],
 })
 export class BreadcrumbsComponent implements OnInit {
     protected currentYear$: Observable<number> = of(0);

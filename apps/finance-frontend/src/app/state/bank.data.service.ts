@@ -113,6 +113,7 @@ export class BankDataService {
     */
     readBankDataEntriesFromData(data: string): Observable<BankDataEntry[]> {
         const bankDataEntries: BankDataEntry[] = [];
+        // rome-ignore lint/suspicious/noExplicitAny: library doesn't support types
         const entries: any[][] = this.ngxCsvParser.csvStringToArray(data, ';');
         return this.bankDataQuery.selectCurrentBankAccount$.pipe(
             map((bankAccountId) => {
