@@ -14,7 +14,6 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "allowImportingTsExtensions": true,
     "paths": {
       "@finanzor/types": ["libs/types/src/index.ts"],
       "@mega-visualization/*": ["apps/mega-visualization/*"]
