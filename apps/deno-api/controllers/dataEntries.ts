@@ -1,4 +1,4 @@
-import { BankDataEntry, RecipientCategory } from '@finanzor/types';
+import { BankDataEntry, RecipientCategory } from '../src/types.ts';
 
 const fileNameBankDataEntries = 'apps/deno-api/data/entries.json';
 const fileNameCategoryMap = 'apps/deno-api/data/categoryMap.json';
