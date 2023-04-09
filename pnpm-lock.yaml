@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@angular-devkit/build-angular': 15.2.5
+  '@angular-devkit/core': ^15.2.5
+  '@angular-devkit/schematics': ^15.2.5
   '@angular-eslint/eslint-plugin': ~15.0.0
   '@angular-eslint/eslint-plugin-template': ~15.0.0
   '@angular-eslint/template-parser': ~15.0.0
@@ -52,7 +54,7 @@ specifiers:
   jest: 29.4.3
   jest-environment-jsdom: 29.4.3
   jest-preset-angular: 13.0.0
-  ngx-csv-parser: 1.2.0
+  ngx-csv-parser: 1.2.2
   nx: 15.9.2
   postcss: ^8.4.18
   prettier: ^2.6.2
@@ -66,6 +68,8 @@ specifiers:
   zone.js: 0.12.0
 
 dependencies:
+  '@angular-devkit/core': 15.2.5
+  '@angular-devkit/schematics': 15.2.5
   '@angular/animations': 15.2.6_@angular+core@15.2.6
   '@angular/cdk': 15.2.6_ogio7uprnlhqiskzk4xubzz6ii
   '@angular/common': 15.2.6_rtgo4ro6s5u5qmh7trabbymj7m
@@ -80,12 +84,12 @@ dependencies:
   '@capacitor/core': 4.6.1
   '@datorama/akita': 7.1.1_rxjs@7.6.0
   '@ionic/angular': 6.4.1_b3dnguiktqwwq7zvfxhwaxdrzi
-  '@nrwl/angular': 15.9.2_g6bvexqq2jkpw43pvfjwhdpgye
+  '@nrwl/angular': 15.9.2_kvb6cqjpucj7xuz2hcioggljsm
   '@schematics/angular': 15.2.5
   autoprefixer: 10.4.13_postcss@8.4.19
   chart.js: 4.2.1
   chartjs-plugin-datalabels: 2.2.0_chart.js@4.2.1
-  ngx-csv-parser: 1.2.0_xspguhg7zqj5ayvnxqasw2epk4
+  ngx-csv-parser: 1.2.2_xspguhg7zqj5ayvnxqasw2epk4
   postcss: 8.4.19
   rome: 11.0.0
   rxjs: 7.6.0
@@ -2343,7 +2347,7 @@ packages:
     dependencies:
       '@ionic/utils-terminal': 2.3.3
       debug: 4.3.4
-      tslib: 2.4.1
+      tslib: 2.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2373,7 +2377,7 @@ packages:
       '@types/fs-extra': 8.1.2
       debug: 4.3.4
       fs-extra: 9.1.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2423,7 +2427,7 @@ packages:
       '@ionic/utils-terminal': 2.3.3
       cross-spawn: 7.0.3
       debug: 4.3.4
-      tslib: 2.4.1
+      tslib: 2.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2438,7 +2442,7 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-      tslib: 2.4.1
+      tslib: 2.5.0
       untildify: 4.0.0
       wrap-ansi: 7.0.0
     transitivePeerDependencies:
@@ -3646,7 +3650,7 @@ packages:
       - supports-color
     dev: true
 
-  /@nrwl/angular/15.9.2_g6bvexqq2jkpw43pvfjwhdpgye:
+  /@nrwl/angular/15.9.2_kvb6cqjpucj7xuz2hcioggljsm:
     resolution: {integrity: sha512-/94rDk3UAcWjfz/XbNGi+2R76dytq2hQEu8yVzFNjn03YlZLfNFgEpXphpkx6eQq7KEHJ2vkr/JrXrkCeHfl4Q==}
     peerDependencies:
       '@angular-devkit/build-angular': '>= 14.0.0 < 16.0.0'
@@ -3660,6 +3664,8 @@ packages:
         optional: true
     dependencies:
       '@angular-devkit/build-angular': 15.2.5_dkqhikl2jizv5x57hqgchnb2tu
+      '@angular-devkit/core': 15.2.5
+      '@angular-devkit/schematics': 15.2.5
       '@nrwl/cypress': 15.9.2_b3adatvhayzhgoq2h2hyfqumou
       '@nrwl/devkit': 15.9.2_nx@15.9.2
       '@nrwl/jest': 15.9.2_fwefyjci7udgx33b6ek24lva2e
@@ -3767,7 +3773,7 @@ packages:
       ignore: 5.2.1
       nx: 15.9.2
       semver: 7.3.4
-      tslib: 2.4.1
+      tslib: 2.5.0
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -3782,7 +3788,7 @@ packages:
       ignore: 5.2.1
       nx: 15.9.2
       semver: 7.3.4
-      tslib: 2.4.1
+      tslib: 2.5.0
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -4099,7 +4105,7 @@ packages:
     peerDependencies:
       '@nrwl/angular': ^15.4.1
     dependencies:
-      '@nrwl/angular': 15.9.2_g6bvexqq2jkpw43pvfjwhdpgye
+      '@nrwl/angular': 15.9.2_kvb6cqjpucj7xuz2hcioggljsm
       '@nrwl/devkit': 15.4.1_nx@15.9.2+typescript@4.9.5
       '@nxext/capacitor': 15.2.0_gvqtzuf6oc34ulrsjdfjobwd4i
     transitivePeerDependencies:
@@ -9686,7 +9692,7 @@ packages:
       plist: 3.0.6
       split2: 4.1.0
       through2: 4.0.2
-      tslib: 2.4.1
+      tslib: 2.5.0
       yauzl: 2.10.0
     transitivePeerDependencies:
       - supports-color
@@ -9719,15 +9725,15 @@ packages:
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  /ngx-csv-parser/1.2.0_xspguhg7zqj5ayvnxqasw2epk4:
-    resolution: {integrity: sha512-KAV0P6BbQt88nt2X6ktbap2wz0OlazUEuD21D3tqkT9uP2TMXT8R/FHJ+meAcj55L7VQe+PhTkYDHOlOw5zsaw==}
+  /ngx-csv-parser/1.2.2_xspguhg7zqj5ayvnxqasw2epk4:
+    resolution: {integrity: sha512-0DlKa9YCaLW7LVu+eI5y8GEJXEXrf4aIAHTgK0IkN62ycD1mie9BPAJPsV8MOVJLyfC5EjFIVhBuRZSJ7rLCGg==}
     peerDependencies:
-      '@angular/common': ^14.1.3
-      '@angular/core': ^14.1.3
+      '@angular/common': ^15.1.4
+      '@angular/core': ^15.1.4
     dependencies:
       '@angular/common': 15.2.6_rtgo4ro6s5u5qmh7trabbymj7m
       '@angular/core': 15.2.6_rxjs@7.6.0+zone.js@0.12.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /nice-napi/1.0.2:
