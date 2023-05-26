@@ -42,11 +42,7 @@ export class SimpleDate {
 
     toString(): string {
         return (
-            this.day.toString() +
-            '.' +
-            this.month.toString() +
-            '.' +
-            this.year.toString()
+            `${this.day.toString()}.${this.month.toString()}.${this.year.toString()}`
         );
     }
 }

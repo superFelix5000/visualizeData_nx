@@ -82,15 +82,15 @@ const appendAllDataEntries = async ({
     if (request.hasBody) {
         let newBankDataEntries = values;
 
-        console.log('entries to add: ' + newBankDataEntries.length);
+        console.log(`entries to add: ${newBankDataEntries.length}`);
 
         const oldEntriesText = await Deno.readTextFile(fileNameBankDataEntries);
         const oldEntries: BankDataEntry[] = JSON.parse(oldEntriesText);
 
-        console.log('number of old entries: ' + oldEntries.length);
+        console.log(`number of old entries: ${oldEntries.length}`);
         newBankDataEntries = oldEntries.concat(newBankDataEntries);
         console.log(
-            'total new number of entries: ' + newBankDataEntries.length
+            `total new number of entries: ${newBankDataEntries.length}`
         );
 
         Deno.writeTextFileSync(
