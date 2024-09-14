@@ -5,7 +5,6 @@ This started with moving my [bank data visualization project](https://github.com
 ## What's in it
 - Angular frontend for financial data visualization, moved over from [here](https://github.com/superFelix5000/visualizeData)
 - Deno backend for the financial data, moved over from [here](https://github.com/superFelix5000/bankDataServer) 
-- Ionic/Capacitor mobile app (which is empty for now) for testing the visualization on mobile
 - more to come...
 
 ## Sandbox
@@ -13,7 +12,6 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - NX / monorepos
 - tailwind css
 - rome for linting and formatting as an alternative to eslint/prettier
-- capacitor / ionic
 - angular material
 - pnpm as an alternative to npm
 - akita as a minimal store solution as an alternative to ngrx

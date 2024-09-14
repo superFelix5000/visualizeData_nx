@@ -1,0 +1,22 @@
+[NX Daemon Server] - 2024-09-14T16:31:52.041Z - Started listening on: /tmp/667c2a2a947d03cee1c2/d.sock
+[NX Daemon Server] - 2024-09-14T16:31:52.043Z - [WATCHER]: Subscribed to changes within: /home/felix/Documents/coding/visualizeData_nx (native)
+[NX Daemon Server] - 2024-09-14T16:31:52.048Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-14T16:31:52.050Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-09-14T16:31:52.052Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-14T16:31:52.055Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-09-14T16:31:52.055Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-09-14T16:31:52.056Z - Handled FORCE_SHUTDOWN. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-09-14T16:31:52.057Z - [WATCHER]: Stopping the watcher for /home/felix/Documents/coding/visualizeData_nx (sources)
+[NX Daemon Server] - 2024-09-14T16:31:52.057Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-14T16:31:52.057Z - [WATCHER]: Stopping the watcher for /home/felix/Documents/coding/visualizeData_nx (outputs)
+[NX Daemon Server] - 2024-09-14T16:36:15.026Z - Started listening on: /tmp/667c2a2a947d03cee1c2/d.sock
+[NX Daemon Server] - 2024-09-14T16:36:15.028Z - [WATCHER]: Subscribed to changes within: /home/felix/Documents/coding/visualizeData_nx (native)
+[NX Daemon Server] - 2024-09-14T16:36:15.032Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-14T16:36:15.033Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-09-14T16:36:15.035Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-14T16:36:15.037Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-09-14T16:36:15.037Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-09-14T16:36:15.037Z - Handled FORCE_SHUTDOWN. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-09-14T16:36:15.038Z - [WATCHER]: Stopping the watcher for /home/felix/Documents/coding/visualizeData_nx (sources)
+[NX Daemon Server] - 2024-09-14T16:36:15.039Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-14T16:36:15.039Z - [WATCHER]: Stopping the watcher for /home/felix/Documents/coding/visualizeData_nx (outputs)

@@ -1,6 +1,0 @@
-{
-  "name": "ionic-dashboard",
-  "devDependencies": {
-    "@capacitor/cli": "^4.6.1"
-  }
-}

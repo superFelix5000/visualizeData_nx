@@ -1,7 +1,0 @@
-{
-  "name": "ionic-dashboard",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
