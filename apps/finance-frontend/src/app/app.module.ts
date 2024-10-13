@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
@@ -33,45 +33,38 @@ import { YearsChartComponent } from './charts/years-chart/years-chart.component'
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { VisualizationComponent } from './visualization-page/visualization/visualization.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    VisualizationComponent,
-    LandingPageComponent,
-    EntryListComponent,
-    EntryCategoryListComponent,
-    EntryListPageComponent,
-    BankDataSortPipe,
-    SearchPipe,
-    PrintSimpleDatePipe,
-    UploadComponent,
-    PieChartComponent,
-    RecipientCategorySortPipe,
-    StackedComponent,
-    YearBarchartComponent,
-    AccountSelectorComponent,
-    YearsChartComponent,
-    BreadcrumbsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    NgxCsvParserModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatSortModule,
-    MatIconModule,
-    MatInputModule,
-    environment.production ? [] : AkitaNgDevtools.forRoot(),
-  ],
-  providers: [SearchPipe],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        VisualizationComponent,
+        LandingPageComponent,
+        EntryListComponent,
+        EntryCategoryListComponent,
+        EntryListPageComponent,
+        BankDataSortPipe,
+        SearchPipe,
+        PrintSimpleDatePipe,
+        UploadComponent,
+        PieChartComponent,
+        RecipientCategorySortPipe,
+        StackedComponent,
+        YearBarchartComponent,
+        AccountSelectorComponent,
+        YearsChartComponent,
+        BreadcrumbsComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        NgxCsvParserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatSortModule,
+        MatIconModule,
+        MatInputModule,
+        environment.production ? [] : AkitaNgDevtools.forRoot()], providers: [SearchPipe, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
