@@ -4,8 +4,6 @@ This started with moving my [bank data visualization project](https://github.com
 
 ## What's in it
 - Angular frontend for financial data visualization, moved over from [here](https://github.com/superFelix5000/visualizeData)
-- Deno backend for the financial data, moved over from [here](https://github.com/superFelix5000/bankDataServer) 
-- more to come...
 
 ## Sandbox
 This is a bit of a Frankenstein's monster for testing out various frameworks and tools (or getting better at them), such as
@@ -17,17 +15,14 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 - akita as a minimal store solution as an alternative to ngrx
 - chart.js
 - rxjs
-- deno
 - docker/docker compose
 - ...
 
 ## Todo
 - create script for starting frontend and backend in parallel using nx
-- let the deno backend also use the shared library models
 
 ## Usage
 - run `pnpm install`
-- run `nx serve deno-api` for starting the backend
 - run `nx serve finance-frontend` for the frontend
 - run `npm run lint` or `npx rome check .` for linting
 - run `npm run format` or `npx rome format --write .` for formatting
@@ -35,5 +30,4 @@ This is a bit of a Frankenstein's monster for testing out various frameworks and
 ### Docker
 - run `nx build finance-frontend` for first building the frontend into the dist folder from which it is later copied to the docker container
 - run `docker compose up` for starting backend and frontend
-- run `docker compose up deno-api` for starting only the backend
 - run `docker compose up finance-frontend` for starting only the frontend

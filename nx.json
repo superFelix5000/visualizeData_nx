@@ -59,6 +59,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "finance-frontend",
-  "plugins": ["@nrwl/deno"]
+  "defaultProject": "finance-frontend"
 }

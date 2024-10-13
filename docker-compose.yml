@@ -1,14 +1,14 @@
 version: "3.7"
 services:
-  deno-api:
-    image: deno-api
-    build:
-      context: apps/deno-api/
-      dockerfile: ./Dockerfile
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./apps/deno-api/data:/apps/deno-api/data
+  #deno-api:
+  #  image: deno-api
+  #  build:
+  #    context: apps/deno-api/
+  #    dockerfile: ./Dockerfile
+  #  ports:
+  #    - "8000:8000"
+  #  volumes:
+  #    - ./apps/deno-api/data:/apps/deno-api/data
   finance-frontend:
     image: finance-frontend
     build: 
