@@ -6,8 +6,9 @@ import { BankDataQuery } from '../../state/bank.data.query';
 import { BankDataService } from '../../state/bank.data.service';
 
 @Component({
-  selector: 'app-visualization',
-  templateUrl: './visualization.component.html',
+    selector: 'app-visualization',
+    templateUrl: './visualization.component.html',
+    standalone: false
 })
 export class VisualizationComponent implements OnInit {
     years = YEARS;

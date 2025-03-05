@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/finance-frontend/src",
   "prefix": "finanzor",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -77,6 +78,5 @@
         "jestConfig": "apps/finance-frontend/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

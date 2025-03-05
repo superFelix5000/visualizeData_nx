@@ -5,7 +5,10 @@ import {
     DataEntrySortDirection,
 } from '@finanzor/types';
 
-@Pipe({ name: 'bankDataSort' })
+@Pipe({
+    name: 'bankDataSort',
+    standalone: false
+})
 export class BankDataSortPipe implements PipeTransform {
     transform(
         value: BankDataEntry[],

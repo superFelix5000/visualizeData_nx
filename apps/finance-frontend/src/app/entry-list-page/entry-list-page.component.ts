@@ -6,8 +6,9 @@ import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 
 @Component({
-  selector: 'app-entry-list-page',
-  templateUrl: './entry-list-page.component.html',
+    selector: 'app-entry-list-page',
+    templateUrl: './entry-list-page.component.html',
+    standalone: false
 })
 export class EntryListPageComponent implements OnInit {
     entries$: Observable<BankDataEntry[]>;

@@ -3,7 +3,10 @@ import { BankDataEntry } from '@finanzor/types';
 import { map, Observable } from 'rxjs';
 import { BankDataQuery } from '../state/bank.data.query';
 
-@Pipe({ name: 'search' })
+@Pipe({
+    name: 'search',
+    standalone: false
+})
 export class SearchPipe implements PipeTransform {
     constructor(private bankdataQuery: BankDataQuery) {}
 

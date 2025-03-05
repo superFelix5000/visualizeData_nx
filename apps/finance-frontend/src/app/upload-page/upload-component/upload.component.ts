@@ -3,8 +3,9 @@ import { BankDataEntry } from '@finanzor/types';
 import { BankDataService } from '../../state/bank.data.service';
 
 @Component({
-  selector: 'app-upload-component',
-  templateUrl: './upload.component.html',
+    selector: 'app-upload-component',
+    templateUrl: './upload.component.html',
+    standalone: false
 })
 export class UploadComponent {
     entries: BankDataEntry[] = [];

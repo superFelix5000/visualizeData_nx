@@ -4,8 +4,9 @@ import { map, Observable, of } from 'rxjs';
 import { BankDataQuery } from '../state/bank.data.query';
 
 @Component({
-  selector: 'app-breadcrumbs',
-  templateUrl: './breadcrumbs.component.html',
+    selector: 'app-breadcrumbs',
+    templateUrl: './breadcrumbs.component.html',
+    standalone: false
 })
 export class BreadcrumbsComponent implements OnInit {
     protected currentYear$: Observable<number> = of(0);

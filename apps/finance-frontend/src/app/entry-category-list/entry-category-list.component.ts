@@ -12,9 +12,10 @@ import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 
 @Component({
-  selector: 'app-entry-category-list',
-  templateUrl: './entry-category-list.component.html',
-  styleUrls: ['./entry-category-list.component.scss'],
+    selector: 'app-entry-category-list',
+    templateUrl: './entry-category-list.component.html',
+    styleUrls: ['./entry-category-list.component.scss'],
+    standalone: false
 })
 export class EntryCategoryListComponent implements OnInit {
     entryChanged = false;

@@ -5,8 +5,9 @@ import { BankDataService } from '../../state/bank.data.service';
 import { MONTHS } from '@finanzor/types';
 
 @Component({
-  selector: 'app-year-barchart',
-  templateUrl: './year-barchart.component.html',
+    selector: 'app-year-barchart',
+    templateUrl: './year-barchart.component.html',
+    standalone: false
 })
 export class YearBarchartComponent implements OnInit {
     @ViewChild('canvas', { static: true })

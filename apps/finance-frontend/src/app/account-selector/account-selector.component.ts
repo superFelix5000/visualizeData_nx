@@ -5,10 +5,11 @@ import { BankDataQuery } from '../state/bank.data.query';
 import { BankDataService } from '../state/bank.data.service';
 
 @Component({
-  selector: 'app-account-selector',
-  templateUrl: './account-selector.component.html',
-  styleUrls: ['./account-selector.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'app-account-selector',
+    templateUrl: './account-selector.component.html',
+    styleUrls: ['./account-selector.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class AccountSelectorComponent implements OnInit {
     selectedBankAccount$: Observable<number>;

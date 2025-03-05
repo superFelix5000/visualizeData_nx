@@ -4,8 +4,9 @@ import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { Category, CategoryColorMap, MONTHS } from '@finanzor/types';
 
 @Component({
-  selector: 'app-stacked',
-  templateUrl: './stacked.component.html',
+    selector: 'app-stacked',
+    templateUrl: './stacked.component.html',
+    standalone: false
 })
 export class StackedComponent implements OnInit {
     @ViewChild('canvas', { static: true })

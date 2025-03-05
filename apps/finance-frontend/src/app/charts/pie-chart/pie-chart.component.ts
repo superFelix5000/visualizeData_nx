@@ -6,8 +6,9 @@ import { BankDataService } from '../../state/bank.data.service';
 import { CategoryColorMap, CategoryPercentage } from '@finanzor/types';
 
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
+    selector: 'app-pie-chart',
+    templateUrl: './pie-chart.component.html',
+    standalone: false
 })
 export class PieChartComponent implements OnInit {
     @ViewChild('canvas', { static: true })
